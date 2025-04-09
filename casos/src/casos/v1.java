@@ -31,6 +31,7 @@ public class v1 extends JFrame implements ActionListener {
 	private JButton btnSumarDosEnteros;
 	private JScrollPane scrollPane;
 	private JTextArea txtS;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -53,7 +54,7 @@ public class v1 extends JFrame implements ActionListener {
 	 */
 	public v1() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 342);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -118,6 +119,11 @@ public class v1 extends JFrame implements ActionListener {
 				txtS = new JTextArea();
 				scrollPane.setViewportView(txtS);
 			}
+		}
+		{
+			btnNewButton = new JButton("Borrar");
+			btnNewButton.setBounds(335, 261, 89, 23);
+			contentPane.add(btnNewButton);
 		}
 	}
 	public void actionPerformed(ActionEvent e) {
