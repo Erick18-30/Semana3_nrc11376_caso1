@@ -24,6 +24,7 @@ public class ventana extends JFrame implements ActionListener {
 	private JScrollPane scrollPane;
 	private JButton btnNewButton;
 	private JTextArea txtS;
+	private JButton btnBorrar;
 
 	/**
 	 * Launch the application.
@@ -46,7 +47,7 @@ public class ventana extends JFrame implements ActionListener {
 	 */
 	public ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 429, 316);
+		setBounds(100, 100, 429, 353);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -78,8 +79,17 @@ public class ventana extends JFrame implements ActionListener {
 			btnNewButton.setBounds(279, 10, 85, 21);
 			contentPane.add(btnNewButton);
 		}
+		{
+			btnBorrar = new JButton("Borrar");
+			btnBorrar.addActionListener(this);
+			btnBorrar.setBounds(279, 278, 85, 21);
+			contentPane.add(btnBorrar);
+		}
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnBorrar) {
+			do_btnBorrar_actionPerformed(e);
+		}
 		if (e.getSource() == btnNewButton) {
 			do_btnNewButton_actionPerformed(e);
 		}
@@ -94,4 +104,9 @@ public class ventana extends JFrame implements ActionListener {
 		txtS.setText("");
 		txtS.append("Se han ingresado: "+con.cantidad()+" nombres");
 	}}
+	protected void do_btnBorrar_actionPerformed(ActionEvent e) {
+		txtnombre.setText("");
+		txtS.setText("");
+		txtnombre.grabFocus();
+	}
 }
